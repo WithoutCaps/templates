@@ -1,0 +1,8 @@
+version: '2'
+services:
+        nginx:
+                image: nginx:stable-alpine
+                volumes:
+                        - /home/gytis/Projects/templates:/usr/share/nginx/html/
+                ports:
+                        - 80:80
