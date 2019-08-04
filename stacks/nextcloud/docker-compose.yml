@@ -1,6 +1,4 @@
-
 version: '2'
-
 services:
   db:
     image: mariadb
@@ -31,4 +29,6 @@ services:
 
 volumes:
   db:
+    driver: local
   nextcloud:
+    driver: local

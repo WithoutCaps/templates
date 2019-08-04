@@ -3,22 +3,30 @@
     "type": 1,
     "title": "Registry",
     "description": "Docker image registry",
-    "categories": ["docker"],
+    "categories": [
+      "docker"
+    ],
     "platform": "linux",
     "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
     "image": "registry:latest",
     "ports": [
       "5000/tcp"
     ],
-    "volumes": [{ "container": "/var/lib/registry"}]
+    "volumes": [
+      {
+        "container": "/var/lib/registry"
+      }
+    ]
   },
-
   {
     "type": 1,
     "title": "Gitlab CE",
     "description": "Open-source end-to-end software development platform",
     "note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
-    "categories": ["development", "project-management"],
+    "categories": [
+      "development",
+      "project-management"
+    ],
     "platform": "linux",
     "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
     "image": "gitlab/gitlab-ce:latest",
@@ -28,17 +36,24 @@
       "22/tcp"
     ],
     "volumes": [
-      { "container": "/etc/gitlab" },
-      { "container": "/var/log/gitlab" },
-      { "container": "/var/opt/gitlab" }
+      {
+        "container": "/etc/gitlab"
+      },
+      {
+        "container": "/var/log/gitlab"
+      },
+      {
+        "container": "/var/opt/gitlab"
+      }
     ]
   },
-
   {
     "type": 1,
     "title": "Datadog agent",
     "description": "Collect events and metrics",
-    "categories": ["Monitoring"],
+    "categories": [
+      "Monitoring"
+    ],
     "platform": "linux",
     "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/datadog_agent.png",
     "image": "datadog/agent:latest",
@@ -66,12 +81,13 @@
       }
     ]
   },
-
   {
     "type": 1,
     "title": "Wowza",
     "description": "Streaming media server",
-    "categories": ["streaming"],
+    "categories": [
+      "streaming"
+    ],
     "platform": "linux",
     "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wowza.png",
     "image": "sameersbn/wowza:4.1.2-8",
@@ -92,14 +108,19 @@
       "8087/tcp",
       "8088/tcp"
     ],
-    "volumes": [{"container": "/var/lib/wowza"}]
+    "volumes": [
+      {
+        "container": "/var/lib/wowza"
+      }
+    ]
   },
-
   {
     "type": 1,
     "title": "Jenkins",
     "description": "Open-source continuous integration tool",
-    "categories": ["continuous-integration"],
+    "categories": [
+      "continuous-integration"
+    ],
     "platform": "linux",
     "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/jenkins.png",
     "image": "jenkins/jenkins:lts",
@@ -113,23 +134,60 @@
         "label": "Jenkins options"
       }
     ],
-    "volumes": [{"container": "/var/jenkins_home"}]
+    "volumes": [
+      {
+        "container": "/var/jenkins_home"
+      }
+    ]
   },
-
   {
     "type": 1,
     "title": "File browser",
     "description": "A web file manager",
     "note": "Default credentials: admin/admin",
-    "categories": ["filesystem", "storage"],
+    "categories": [
+      "filesystem",
+      "storage"
+    ],
     "platform": "linux",
     "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/filebrowser.png",
     "image": "filebrowser/filebrowser:latest",
     "ports": [
       "80/tcp"
     ],
-    "volumes": [{"container": "/data"}, {"container": "/srv"}],
+    "volumes": [
+      {
+        "container": "/data"
+      },
+      {
+        "container": "/srv"
+      }
+    ],
     "command": "--port 80 --database /data/database.db --scope /srv"
   },
-  
+  {
+    "type": 3,
+    "title": "NextCloud",
+    "name": "NextCloud",
+    "description": "NextCloud",
+    "note": "NOTE",
+    "categories": [],
+    "logo": "https://avatars0.githubusercontent.com/u/19211038",
+    "repository": {
+      "url": "https://github.com/WithoutCaps/templates",
+      "stackfile": "stacks/nextcloud/docker-compose.yml"
+    },
+    "env": [
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "label": "Root password",
+        "description": "Password used by the root user."
+      },
+      {
+        "name": "MYSQL_PASSWORD",
+        "label": "NextCloud DB password",
+        "description": "Password used by NextCloud"
+      }
+    ]
+  }
 ]
