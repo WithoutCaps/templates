@@ -169,25 +169,20 @@
     "type": 3,
     "title": "NextCloud",
     "name": "NextCloud",
-    "description": "NextCloud",
+    "description": "The self-hosted productivity platform that keeps you in control",
     "note": "NOTE",
-    "categories": [],
+    "categories": [
+      "storage",
+      "filesystem",
+      "cloud",
+      "productivity",
+      "web",
+      "tools"
+    ],
     "logo": "https://avatars0.githubusercontent.com/u/19211038",
     "repository": {
       "url": "https://github.com/WithoutCaps/templates",
-      "stackfile": "stacks/nextcloud/docker-compose.yml"
-    },
-    "env": [
-      {
-        "name": "MYSQL_ROOT_PASSWORD",
-        "label": "Root password",
-        "description": "Password used by the root user."
-      },
-      {
-        "name": "MYSQL_PASSWORD",
-        "label": "NextCloud DB password",
-        "description": "Password used by NextCloud"
-      }
-    ]
+      "stackfile": "stacks/nextcloud/docker-stack.yml"
+    }
   }
 ]
