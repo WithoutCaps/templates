@@ -166,7 +166,7 @@
     "command": "--port 80 --database /data/database.db --scope /srv"
   },
   {
-    "type": 3,
+    "type": 2,
     "title": "NextCloud",
     "name": "NextCloud",
     "description": "The self-hosted productivity platform that keeps you in control",
